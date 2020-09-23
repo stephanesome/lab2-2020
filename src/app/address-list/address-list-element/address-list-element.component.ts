@@ -13,8 +13,7 @@ export class AddressListElementComponent implements OnInit, OnDestroy {
   selected = false;
   subscription: Subscription;
 
-  constructor(private notificationService: NotificationService) {
-  }
+  constructor(private notificationService: NotificationService) { }
 
   ngOnInit(): void {
     this.subscription = this.notificationService.selectedElement.subscribe(newAddress => {
