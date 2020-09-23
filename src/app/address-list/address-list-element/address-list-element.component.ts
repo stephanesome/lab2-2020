@@ -14,12 +14,12 @@ export class AddressListElementComponent implements OnInit, OnDestroy {
   subscription: Subscription;
 
   constructor(private notificationService: NotificationService) {
-    this.subscription = notificationService.selectedElement.subscribe(newAddress => {
-      this.selected = newAddress === this.address ? true : false;
-    });
   }
 
   ngOnInit(): void {
+    this.subscription = this.notificationService.selectedElement.subscribe(newAddress => {
+      this.selected = newAddress === this.address ? true : false;
+    });
   }
 
   getFullName(): string {
